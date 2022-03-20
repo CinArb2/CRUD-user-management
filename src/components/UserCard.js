@@ -18,7 +18,6 @@ const UserCard = ({user, handleDelete, handleEdit, children, handleShow}) => {
         <Button variant="secondary" className="rounded px-0 py-1 ms-2"  onClick={()=>handleEdit(user)}>
           <img className="w-50" src="https://img.icons8.com/ios/50/ffffff/edit--v1.png" alt="icon-edit" onClick={handleShow} />
         </Button>
-        {children}
       </Card.Body>
     </Card>
   )

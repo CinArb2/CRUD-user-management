@@ -87,13 +87,16 @@ function App() {
               handleDelete={handleDelete}
               handleEdit={handleEdit}
               handleShow={handleShow}>
-              <ModalUsers show={show} title='Edit' >
-                <UsersForm submitForm={submitForm} form={edit} handleClose={handleClose}/>
-              </ModalUsers>
             </UserCard>
           </Col>
-        ))} 
+        ))}
       </UsersList>
+      { show ?
+        <ModalUsers show={show} title='Edit' >
+          <UsersForm submitForm={submitForm} form={edit} handleClose={handleClose}/>
+        </ModalUsers>
+        : ''
+      }
     </div>
   );
 }

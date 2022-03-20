@@ -31,10 +31,8 @@ const UsersForm = ({submitForm, form, handleClose}) => {
   }
   
 
-  const onError = (error) => console.log(error)
-
   return (
-    <Form onSubmit={handleSubmit(submitForm, onError)}>
+    <Form onSubmit={handleSubmit(submitForm)}>
       <Form.Group className="mb-3" >
         
         <Form.Label>Name</Form.Label>
