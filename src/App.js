@@ -1,13 +1,13 @@
 
 import { useEffect, useState } from 'react';
-import './App.css';
+import Col from 'react-bootstrap/Col';
+import axios from 'axios'
 import Header from './components/Header'
 import UsersList from './components/UsersList';
-import axios from 'axios'
-import Col from 'react-bootstrap/Col';
 import UserCard from './components/UserCard';
 import ModalUsers from './components/ModalUsers';
 import UsersForm from './components/UsersForm';
+import formatDate from './Helpers/formatDate';
 
 function App() {
   //form states
@@ -26,21 +26,8 @@ function App() {
     getUsers()
   }, [])
 
-  //function to convert date format received from formComponent
-    function padTo2Digits(num) {
-      return num.toString().padStart(2, '0');
-    }
 
-    function formatDate(date) {
-      if (!date) return date
-      return [
-        date.getFullYear(),
-        padTo2Digits(date.getMonth() + 1),
-        padTo2Digits(date.getDate()),
-      ].join('-');
-    }
-  
-  // get users everytime modify data
+  // get users everytime we update,  create user or delete user
   const getUsers = () => {
     axios.get('https://users-crud1.herokuapp.com/users/')
     .then(data=> setUsers(data.data))

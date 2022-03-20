@@ -14,7 +14,7 @@ const ModalUsers = ({ show, title, children }) => {
           <Modal.Title>{title} user</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {children}
+          {children}
         </Modal.Body>
     </Modal>
   )
