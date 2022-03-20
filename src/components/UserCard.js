@@ -10,7 +10,7 @@ const UserCard = ({user, handleDelete, handleEdit, children, handleShow}) => {
       <Card.Body>
           <span className="text-uppercase text-secondary ">Email</span>
           <p>{user.email}</p>
-          <span className="text-uppercase text-secondary">Fecha de nacimiento</span>
+          <span className="text-uppercase text-secondary">Date of birth</span>
           <p>{user.birthday ? user.birthday : 'No data'}</p>
         <Button variant="danger" className="rounded px-0 py-1" onClick={()=>handleDelete(user.id)}>
           <img className="w-50" src="https://img.icons8.com/ios/50/ffffff/delete--v1.png" alt="icon-delete"/>

@@ -9,7 +9,7 @@ const Header = ({handleShow, children}) => {
   return (
     <Navbar className="py-3 px-5">
       <Container>
-        <Navbar.Brand className="fs-1">Usuarios</Navbar.Brand>
+        <Navbar.Brand className="fs-1">Users</Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
           <Button variant="primary" onClick={handleShow} className="rounded-pill p-2">
             + Create new user
