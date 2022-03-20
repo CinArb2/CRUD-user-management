@@ -21,15 +21,15 @@ const UsersForm = ({submitForm, form, handleClose}) => {
     resolver: yupResolver(schema)
   })
   
-  useEffect(() => {
-    if (form.edit) {
-        setValue('first_name', form.first_name);
-        setValue('last_name', form.last_name);
-        setValue('email', form.email);
-        setValue('birthday', form.birthday);
-        setValue('password', form.password);
-    }
-  }, []);
+  
+  if (form.edit) {
+      setValue('first_name', form.first_name);
+      setValue('last_name', form.last_name);
+      setValue('email', form.email);
+      setValue('birthday', form.birthday);
+      setValue('password', form.password);
+  }
+  
 
   const onError = (error) => console.log(error)
 
