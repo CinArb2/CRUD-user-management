@@ -10,7 +10,7 @@ import UsersForm from './components/UsersForm';
 import formatDate from './Helpers/formatDate';
 
 function App() {
-  //form states
+  //Form states
   const [users, setUsers] = useState([])
   const [edit, setEdit] = useState(false)
   
@@ -25,7 +25,6 @@ function App() {
   useEffect(() => {
     getUsers()
   }, [])
-
 
   // get users everytime we update,  create user or delete user
   const getUsers = () => {
@@ -60,11 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header handleShow={handleShow}>
-        <ModalUsers show={show} title='Create New' >
-          <UsersForm submitForm={submitForm} form={edit} handleClose={handleClose}/>
-        </ModalUsers>
-      </Header>
+      <Header handleShow={handleShow}/>
       <UsersList>
         {users.map(user => (
           <Col lg={4} md={4} sm={6} xs={8} className='m-auto my-4' key={user.id}>
@@ -79,7 +74,7 @@ function App() {
         ))}
       </UsersList>
       { show ?
-        <ModalUsers show={show} title='Edit' >
+        <ModalUsers show={show} title={edit.edit? 'Edit':'Create New'} >
           <UsersForm submitForm={submitForm} form={edit} handleClose={handleClose}/>
         </ModalUsers>
         : ''

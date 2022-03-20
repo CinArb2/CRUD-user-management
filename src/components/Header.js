@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
 
-const Header = ({handleShow, children}) => {
+const Header = ({handleShow}) => {
 
   return (
     <Navbar className="py-3 px-5">
@@ -16,7 +16,6 @@ const Header = ({handleShow, children}) => {
           </Button>
         </Navbar.Collapse>
       </Container>
-        {children}
     </Navbar>
   )
 }
